@@ -5,7 +5,7 @@ const STORAGE_KEY = 'lang';
 const dictionaries = {
 	en: {
 		page_title: 'Lautronome — metronome & timer',
-		meta_description: 'A metronome with a built-in interval timer for practice.',
+		meta_description: 'A metronome with a built-in interval timer',
 		subtitle: 'A metronome with a built-in interval timer.',
 		ready: 'Ready',
 		round: 'Round',
@@ -28,8 +28,8 @@ const dictionaries = {
 	},
 	es: {
 		page_title: 'Lautronome — metrónomo y temporizador',
-		meta_description: 'Un metrónomo con temporizador de intervalos integrado para practicar.',
-		subtitle: 'Un metrónomo con temporizador de intervalos integrado.',
+		meta_description: 'Un metrónomo con temporizador de intervalos integrado',
+		subtitle: 'Un metrónomo con temporizador de intervalos integrado',
 		ready: 'Listo',
 		round: 'Ronda',
 		breakPhase: 'Descanso',
