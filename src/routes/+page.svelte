@@ -238,6 +238,14 @@
 	</section>
 
 	<footer class="text-surface-500 mt-auto pt-4 text-center text-xs">
-		{i18n.dict.footer}
+		{i18n.dict.made_by}
+		<a
+			href="https://github.com/laaraujo/"
+			target="_blank"
+			rel="noopener noreferrer"
+			class="text-primary-500 hover:underline"
+		>
+			Lautaro Araujo
+		</a>
 	</footer>
 </main>

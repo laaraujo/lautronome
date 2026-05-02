@@ -22,7 +22,7 @@ const dictionaries = {
 		infinite: 'Infinite',
 		start: 'Start',
 		stop: 'Stop',
-		footer: 'Built with SvelteKit, Skeleton UI & the Web Audio API.',
+		made_by: 'By',
 		toggle_dark: 'Toggle dark mode',
 		language: 'Language'
 	},
@@ -45,7 +45,7 @@ const dictionaries = {
 		infinite: 'Infinito',
 		start: 'Empezar',
 		stop: 'Detener',
-		footer: 'Hecho con SvelteKit, Skeleton UI y la Web Audio API.',
+		made_by: 'Por',
 		toggle_dark: 'Cambiar modo oscuro',
 		language: 'Idioma'
 	}
