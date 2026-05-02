@@ -124,7 +124,7 @@
 					type="number"
 					min="30"
 					max="300"
-					class="input w-24 text-right"
+					class="input preset-tonal-surface w-24 text-right"
 					value={m.bpm}
 					oninput={(e) => (m.bpm = clampInt(+e.currentTarget.value, 30, 300))}
 				/>
@@ -188,7 +188,7 @@
 					type="number"
 					min="1"
 					max="3600"
-					class="input"
+					class="input preset-tonal-surface"
 					value={m.workSeconds}
 					disabled={m.isRunning}
 					oninput={(e) => (m.workSeconds = clampInt(+e.currentTarget.value, 1, 3600))}
@@ -200,7 +200,7 @@
 					type="number"
 					min="0"
 					max="3600"
-					class="input"
+					class="input preset-tonal-surface"
 					value={m.breakSeconds}
 					disabled={m.isRunning}
 					oninput={(e) => (m.breakSeconds = clampInt(+e.currentTarget.value, 0, 3600))}
@@ -231,7 +231,7 @@
 				type="number"
 				min="1"
 				max="99"
-				class="input"
+				class="input preset-tonal-surface"
 				value={m.totalRounds}
 				disabled={m.isRunning || m.infiniteRounds}
 				oninput={(e) => (m.totalRounds = clampInt(+e.currentTarget.value, 1, 99))}
