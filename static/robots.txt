@@ -1,4 +1,2 @@
 User-agent: *
 Allow: /
-
-Sitemap: https://laaraujo.github.io/lautronome/sitemap.xml
