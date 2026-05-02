@@ -1,0 +1,10 @@
+@import 'tailwindcss';
+
+/* Make Tailwind's `dark:` variant follow `data-mode="dark"` on <html>,
+   so the Lightswitch can manually toggle modes (instead of relying on
+   the OS-level prefers-color-scheme). */
+@custom-variant dark (&:where([data-mode="dark"], [data-mode="dark"] *));
+
+@import '@skeletonlabs/skeleton';
+@import '@skeletonlabs/skeleton-svelte';
+@import '@skeletonlabs/skeleton/themes/pine';
