@@ -6,7 +6,11 @@
 
 	const options: ReadonlyArray<{ value: Lang; label: string; flag: string }> = [
 		{ value: 'en', label: 'EN', flag: '🇬🇧' },
-		{ value: 'es', label: 'ES', flag: '🇪🇸' }
+		{ value: 'es', label: 'ES', flag: '🇪🇸' },
+		{ value: 'fr', label: 'FR', flag: '🇫🇷' },
+		{ value: 'pt', label: 'PT', flag: '🇵🇹' },
+		{ value: 'zh', label: 'ZH', flag: '🇨🇳' },
+		{ value: 'hi', label: 'HI', flag: '🇮🇳' }
 	];
 
 	const current = $derived(options.find((o) => o.value === i18n.lang));
