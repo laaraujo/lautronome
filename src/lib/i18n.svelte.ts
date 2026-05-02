@@ -145,6 +145,19 @@ const dictionaries = {
 
 export type Dict = (typeof dictionaries)[Lang];
 
+const supportedLangs = Object.keys(dictionaries) as Lang[];
+
+function detectFromBrowser(): Lang | null {
+	if (typeof navigator === 'undefined') return null;
+	const tags = navigator.languages?.length ? navigator.languages : [navigator.language || ''];
+	for (const tag of tags) {
+		const code = tag.toLowerCase().split('-')[0];
+		const match = supportedLangs.find((l) => l === code);
+		if (match) return match;
+	}
+	return null;
+}
+
 class I18n {
 	/**
 	 * Default language is 'en' so server-prerendered HTML matches the initial
@@ -161,14 +174,8 @@ class I18n {
 			const saved = localStorage.getItem(STORAGE_KEY) as Lang | null;
 			if (saved && saved in dictionaries) {
 				detected = saved;
-			} else if (typeof navigator !== 'undefined') {
-				const navLang = (navigator.language || '').toLowerCase();
-				if (navLang.startsWith('es')) detected = 'es';
-				else if (navLang.startsWith('fr')) detected = 'fr';
-				else if (navLang.startsWith('pt')) detected = 'pt';
-				else if (navLang.startsWith('zh')) detected = 'zh';
-				else if (navLang.startsWith('hi')) detected = 'hi';
-				else detected = 'en';
+			} else {
+				detected = detectFromBrowser() ?? 'en';
 			}
 		} catch {
 			/* ignore */
