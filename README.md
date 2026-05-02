@@ -4,6 +4,11 @@ A simple, accurate metronome with a built-in interval timer for practice rounds.
 
 Pick a tempo (BPM), how long each practice round should last, and how long the break between rounds should be. Hit start.
 
+<p align="center">
+  <img src="docs/screenshot-light.png" alt="Lautronome — light mode" width="380" />
+  <img src="docs/screenshot-dark.png" alt="Lautronome — dark mode" width="380" />
+</p>
+
 ## Stack
 
 - [SvelteKit](https://svelte.dev/docs/kit) (Svelte 5, runes mode) with `adapter-static`
