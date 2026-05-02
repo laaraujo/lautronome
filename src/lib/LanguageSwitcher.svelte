@@ -5,8 +5,8 @@
 	let open = $state(false);
 
 	const options: ReadonlyArray<{ value: Lang; label: string; flag: string }> = [
-		{ value: 'en', label: 'English', flag: '🇬🇧' },
-		{ value: 'es', label: 'Español', flag: '🇪🇸' }
+		{ value: 'en', label: 'EN', flag: '🇬🇧' },
+		{ value: 'es', label: 'ES', flag: '🇪🇸' }
 	];
 
 	const current = $derived(options.find((o) => o.value === i18n.lang));
