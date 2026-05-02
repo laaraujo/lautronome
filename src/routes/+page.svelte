@@ -124,15 +124,25 @@
 					type="number"
 					min="30"
 					max="300"
-					class="input preset-tonal-surface w-24 text-right"
+					class="input preset-tonal-surface w-24 text-right [appearance:textfield] [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none"
 					value={m.bpm}
-					oninput={(e) => (m.bpm = clampInt(+e.currentTarget.value, 30, 300))}
+					oninput={(e) => {
+						const n = +e.currentTarget.value;
+						if (Number.isFinite(n) && n >= 30 && n <= 300) m.bpm = n;
+					}}
+					onchange={(e) => {
+						const raw = e.currentTarget.value.trim();
+						const parsed = raw === '' ? 100 : +raw;
+						const next = Number.isFinite(parsed) ? clampInt(parsed, 30, 300) : 100;
+						m.bpm = next;
+						e.currentTarget.value = String(next);
+					}}
 				/>
 			</div>
 			<Slider
 				value={[m.bpm]}
 				min={30}
-				max={240}
+				max={300}
 				step={1}
 				onValueChange={(d) => (m.bpm = d.value[0])}
 			>
