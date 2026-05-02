@@ -45,12 +45,14 @@
 </svelte:head>
 
 <main class="mx-auto flex min-h-screen w-full max-w-2xl flex-col gap-6 p-4 sm:p-8">
-	<header class="flex items-start justify-between gap-4">
+	<header
+		class="flex flex-col-reverse gap-3 sm:flex-row sm:items-start sm:justify-between sm:gap-4"
+	>
 		<div class="flex flex-col gap-1">
 			<h1 class="h1 font-bold tracking-tight">Lautronome</h1>
 			<p class="text-surface-500 text-sm">{i18n.dict.subtitle}</p>
 		</div>
-		<div class="flex items-center gap-3">
+		<div class="flex items-center gap-3 self-end sm:self-auto">
 			<LanguageSwitcher />
 			<Lightswitch />
 		</div>
