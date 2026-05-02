@@ -6,7 +6,7 @@ const dictionaries = {
 	en: {
 		page_title: 'Lautronome — metronome & timer',
 		meta_description: 'A metronome with a built-in interval timer',
-		subtitle: 'A metronome with a built-in interval timer.',
+		subtitle: 'A metronome with a built-in interval timer',
 		ready: 'Ready',
 		round: 'Round',
 		breakPhase: 'Break',
