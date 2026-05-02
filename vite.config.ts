@@ -37,7 +37,10 @@ export default defineConfig({
 				]
 			},
 			workbox: {
-				globPatterns: ['client/**/*.{js,css,ico,png,svg,webp,woff,woff2}']
+				globPatterns: [
+					'client/**/*.{js,css,ico,png,svg,webp,woff,woff2,xml,txt,webmanifest}'
+				],
+				navigateFallbackDenylist: [/\/_/, /\/[^/?]+\.[^/]+$/]
 			},
 			devOptions: {
 				enabled: false
