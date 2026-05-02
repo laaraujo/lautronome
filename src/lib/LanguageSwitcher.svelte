@@ -4,12 +4,12 @@
 
 	let open = $state(false);
 
-	const options: ReadonlyArray<{ value: Lang; label: string }> = [
-		{ value: 'en', label: 'English' },
-		{ value: 'es', label: 'Español' }
+	const options: ReadonlyArray<{ value: Lang; label: string; flag: string }> = [
+		{ value: 'en', label: 'English', flag: '🇬🇧' },
+		{ value: 'es', label: 'Español', flag: '🇪🇸' }
 	];
 
-	const currentLabel = $derived(options.find((o) => o.value === i18n.lang)?.label ?? '');
+	const current = $derived(options.find((o) => o.value === i18n.lang));
 
 	function pick(lang: Lang) {
 		i18n.set(lang);
@@ -26,7 +26,8 @@
 		class="btn btn-sm preset-tonal-surface inline-flex items-center gap-1.5"
 		aria-label={i18n.dict.language}
 	>
-		<span>{currentLabel}</span>
+		<span aria-hidden="true">{current?.flag ?? ''}</span>
+		<span>{current?.label ?? ''}</span>
 		<svg
 			xmlns="http://www.w3.org/2000/svg"
 			viewBox="0 0 24 24"
@@ -53,12 +54,13 @@
 							type="button"
 							role="option"
 							aria-selected={i18n.lang === opt.value}
-							class="btn w-full justify-start {i18n.lang === opt.value
-								? 'preset-filled-primary-500'
-								: 'hover:preset-tonal-surface'}"
+						class="btn w-full justify-start gap-2 {i18n.lang === opt.value
+							? 'preset-filled-primary-500'
+							: 'hover:preset-tonal-surface'}"
 							onclick={() => pick(opt.value)}
 						>
-							{opt.label}
+							<span aria-hidden="true">{opt.flag}</span>
+							<span>{opt.label}</span>
 						</button>
 					</li>
 				{/each}
